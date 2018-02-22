@@ -35,6 +35,7 @@ for slide in prs.slides:
         text.append('\n')
 
 dumpString = ''.join(text)
+dumpString = dumpString.encode('utf8')  # https://stackoverflow.com/questions/6048085/writing-unicode-text-to-a-text-file
 
 with open(OUTPUT_FILE+'.md','w') as f:
     f.write(dumpString)
